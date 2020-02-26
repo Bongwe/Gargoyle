@@ -1,0 +1,32 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #efefef;
+  }
+  h1, h2, h3 { margin:0; padding:0; font-weight: normal; }
+  * {
+    font-family: inherit;
+  }
+  button {
+    font-family: inherit;
+    background: transparent;
+    border:0;
+    padding:0 0.7em;
+    margin:0;
+    outline:0;
+    border-radius:2px;
+  }
+  button:active { border:0; }
+  ::-webkit-file-upload-button { cursor:pointer; }
+  </style>
+
+
+  <!-- title -->
+  <section class="page-title">
+    <h1 style="font-weight: bold; font-size: 2.5em;">Voice Changer <span style="opacity:0.3; font-size:40%; font-weight: normal; display: inline-block; width:0;">.io</span></h1>
+    <p style="max-width:500px; opacity:0.5; position:fixed; right:-550px;">A simple online voice changer app to transform your voice and add effects. Voice Changer can make your voice deeper, make your voice sound like a girl/guy, change and distort your voice so it's anonymous, make you voice sound like a robot, darth vader, a monster, and a tonne of other - best of all, Voice Changer is free! Frequently asked questions are at the bottom of the page :)</p>
+  </section>
+  <style>
+  section.page-title {
+    text-align: center;
+    padding:2em 0;
+  }

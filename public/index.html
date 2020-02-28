@@ -8,72 +8,28 @@
     </head>
     <body>
         <div class="container">
-          
-        <input accept="audio/*,video/*" onchange="loadAudioFile(this.files[0]);"  type="file" />
-        <!-- <button id="microphone-button" onclick="recordFromMicrophone();"><span class="start">use microphone</span><span class="stop" style="display:none;">(<span class="time"></span>) stop recording</span></button> -->
-        <button id="microphone-button" style="background:#2b90d9;" onclick="recordFromMicrophone();"><span class="start">use microphone</span><span class="mic-enable" style="display:none;">please enable microphone</span><span class="stop" style="display:none;">(<span class="time"></span>) stop recording</span></button>
-            
-        <div class="voice-card" onclick="loadTransform(event, 'bane')" >
-            <h2 class="title">Monster Voice Changer</h2>
-            <div class="description">This one changes your voice so it sounds sort of like a big evil troll/monster. Behind the scenes I've done some fancy stuff with oscillating signals such that it's deeper and slightly distorted (like the monster's voice box is a bit damaged or something), and then I've cleard out the high frequency parts of the signal to smooth it off.</div>
-            <div class="keyphrases">troll voice moulator online, troll voice, ogre voice converter, ogre voice effect, troll voice effect, troll voice converter</div>
-        </div>
-
-        <audio id="output-audio-tag" controls></audio>
-        <audio id="output-audio-tag" controls></audio>
-        <!-- <div class="row align-items-start">
-                <div class="col-12">
-                    REWIND
+            <div class="row">
+                <div class="col">
+                    <input type="button" value="RECORD"  id="record">
                 </div>
             </div>
-            <div class="row align-items-center" >
+            <div class="row">
+                <div class="col">
+                    <input type="button" value="STOP"  id="stop">
+                </div>
             </div>
-            <div class="row align-items-center fixed-bottom">
+            <div class="row">
                 <div class="col">
-                    <img src="imgs/Record.png" id="Record" alt="Record button" height="130" width="130">
+                    <input type="button" value="FILTER"  id="filter">
                 </div>
-                <div class="col">  
-                        <img src="imgs/Stop.png" id="Stop" alt="Record button" height="130" width="130">
-                </div>
+            </div>
+            <div class="row">
                 <div class="col">
-                    <img src="imgs/Play.png" id="Play" alt="Record button" height="130" width="130">   
+                    <audio id="player" controls></audio>
                 </div>
-                <div class="col">
-                    <img src="imgs/Save.png" id="Save" alt="Record button" height="130" width="130">   
-                </div>
-            </div> -->
+            </div>
         </div>
     </body>
-    <script src="./scripts/jquery-3.4.1.min.js"></script>
-    <script src="./scripts/helpers.js"></script>
-    <script src="./scripts/myWorker.js"></script>
-    <script src="./scripts/basic-recording.js"></script>
-    <script src="./scripts/jungle.js"></script>
-    <script src="./scripts/bane.js"></script>
-
-    <!-- <script >
-        async function loadTransform(e, transformName, ...transformArgs) {
-
-        //modalAdv.innerHTML = '<div style="width:100%; height:100%; overflow:hidden;"><ins class="adsbygoogle" style="display:block; max-height:100%; height:100%;" data-ad-client="ca-pub-3263838347296949" data-ad-slot="8209523126" data-ad-format="auto"></ins></div>';
-        //(adsbygoogle = window.adsbygoogle || []).push({});
-
-        if(!globalAudioBuffer) {
-        let arrayBuffer = await (await fetch("../audio/example.mp3")).arrayBuffer();
-        let ctx = new AudioContext();
-        globalAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
-        }
-
-        let outputAudioBuffer = await window[transformName+"Transform"](globalAudioBuffer, ...transformArgs)
-        let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer)
-        let audioUrl = window.URL.createObjectURL(outputWavBlob);
-        let audioTag = $("#output-audio-tag");
-        audioTag.src = audioUrl;
-        audioTag.play();
-
-        // $("body section.output .loading").style.display = 'none';
-        // $("body section.output .finished").style.display = 'block';
-
-        }
-    </script> -->
+    <script src="./scripts/main.js"></script>
     
 </html>

@@ -1,6 +1,5 @@
 const player = document.getElementById('player');
 
-
 const handleSuccess = function(stream) {
     document.getElementById("record").addEventListener("click", record); 
     document.getElementById("stop").addEventListener("click", stop); 

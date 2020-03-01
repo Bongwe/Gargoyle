@@ -8,7 +8,6 @@ const handleSuccess = function(stream) {
     document.getElementById("stop").addEventListener("click", stop); 
   
     const mediaRecorder = new MediaRecorder(stream);
-    let audio = document.getElementById("player");
   
     mediaRecorder.addEventListener("dataavailable", event => {
       audioChunks.push(event.data);

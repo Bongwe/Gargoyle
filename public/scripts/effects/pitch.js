@@ -1,9 +1,8 @@
 
 document.getElementById("filter2").addEventListener("click", filter2);  
-const audioElement = document.querySelector('audio');
 
 function filter2 () {
-
+  
   const blob = new Blob(audioChunks);
     
   convertToArrayBuffer(blob)
@@ -22,11 +21,11 @@ function convertToArrayBuffer(blob) {
 
 function play(audioBuffer) {
 
-  sample = audioContext.createBufferSource();
-  sample.buffer = audioBuffer;
-  sample.playbackRate.value = 1.7;
-  //sample.loop = true;
-  sample.connect(audioContext.destination);
-  sample.start();
+  const sourceNode = audioContext.createBufferSource();
+
+  sourceNode.buffer = audioBuffer;
+  sourceNode.detune.value = +800;
+  sourceNode.connect(audioContext.destination);
+  sourceNode.start();
 
 }
